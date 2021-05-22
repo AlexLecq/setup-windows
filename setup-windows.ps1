@@ -1,2 +1,2 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-choco install firefox winrar avgantivirusfree ccleaner choco install libreoffice-fresh filezilla vlc jre8 -y
+choco install firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y
