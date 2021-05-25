@@ -11,7 +11,7 @@ function Set-WallPaper {
 function Disable-Cortana {
     Write-Host "-------------- Disable Cortana -------------";
     $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"; 
-    IF(!(Test-Path -Path $path)) { 
+    If(!(Test-Path -Path $path)) { 
         New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows" -Name "Windows Search";
     } 
     Set-ItemProperty -Path $path -Name "AllowCortana" -Value 0;
@@ -19,22 +19,28 @@ function Disable-Cortana {
     Stop-Process -name explorer;
 }
 
-function Install-Choco{
+function Install-Choco {
     Write-Host "-------------- Install Chocolatey -------------";
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
+    Set-ExecutionPolicy Bypass -Scope Process -Force;
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
     Try {
-        choco -v
+        choco -v;
     } Catch {
         Write-Host "choco is not install";
         exit;
     }
 }
 
+function Install-Apps {
+    Write-Host "-------------- Apps installing -------------";
+    choco install firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
+}
+
 Set-ExecutionPolicy UnRestricted -Force;
 
 Install-Choco;
-Write-Host "-------------- Apps installing -------------";
-choco install firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
+Install-Apps;
 Disable-Cortana;
 Set-Wallpaper -PathImage "assets\wallpaper.jpg";
 
