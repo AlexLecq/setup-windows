@@ -1,3 +1,6 @@
+param(
+    [bool]$DevSetup    
+)
 
 function Set-WallPaper {
     param(
@@ -34,7 +37,12 @@ function Install-Choco {
 
 function Install-Apps {
     Write-Host "-------------- Apps installing -------------";
-    choco install firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
+    choco install adobereader firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
+}
+
+function Install-Apps-For-Dev {
+    Write-Host "-------------- Dev Apps installing -------------";
+    choco install git sourcetree intellijidea-community vscode maven nodejs dotnet dotnetcore-sdk -y;
 }
 
 Set-ExecutionPolicy UnRestricted -Force;
