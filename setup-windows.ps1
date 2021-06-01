@@ -43,7 +43,6 @@ function Install-Apps {
 function Install-Apps-For-Dev {
     Write-Host "-------------- Dev Apps installing -------------";
     choco install git sourcetree intellijidea-community vscode maven nodejs dotnet dotnetcore-sdk -y;
-    choco install visualstudio2019community vscode git dotnetcore dotnetcore-sdk docker-desktop sourcetree -y;
 }
 
 Set-ExecutionPolicy UnRestricted -Force;
