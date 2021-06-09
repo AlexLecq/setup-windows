@@ -37,12 +37,12 @@ function Install-Choco {
 
 function Install-Apps {
     Write-Host "-------------- Apps installing -------------";
-    choco install adobereader firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
+    choco install adobereader googlechrome firefox winrar avgantivirusfree ccleaner libreoffice-fresh filezilla vlc jre8 -y;
 }
 
 function Install-Apps-For-Dev {
     Write-Host "-------------- Dev Apps installing -------------";
-    choco install git sourcetree intellijidea-community vscode maven nodejs dotnet dotnetcore-sdk -y;
+    choco install git vscode virtualbox visualstudio2019community docker-desktop dotnet-5.0-sdk dotnet dotnetcore-sdk sourcetree -y;
 }
 
 Set-ExecutionPolicy UnRestricted -Force;
