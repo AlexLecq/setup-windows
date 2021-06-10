@@ -49,6 +49,7 @@ Set-ExecutionPolicy UnRestricted -Force;
 
 Install-Choco;
 Install-Apps;
+Install-Apps-For-Dev;
 Disable-Cortana;
 Set-Wallpaper -PathImage "assets\wallpaper.jpg";
 
