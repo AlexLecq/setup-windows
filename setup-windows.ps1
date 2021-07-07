@@ -45,12 +45,7 @@ function Install-Apps-For-Dev {
     choco install git vscode virtualbox visualstudio2019community docker-desktop dotnet-5.0-sdk dotnet dotnetcore-sdk sourcetree -y;
 }
 
-Set-ExecutionPolicy UnRestricted -Force;
-
 Install-Choco;
 Install-Apps;
-Install-Apps-For-Dev;
 Disable-Cortana;
 Set-Wallpaper -PathImage "assets\wallpaper.jpg";
-
-Set-ExecutionPolicy Restricted -Force;
